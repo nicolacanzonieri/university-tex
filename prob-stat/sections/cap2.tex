@@ -1,0 +1,192 @@
+\section{Capitolo 2: Probabilità classica, frequentista e assiomatica}
+
+\subsection{Operazioni su eventi}
+
+\begin{flushleft}
+
+Abbiamo quattro principali operazioni logiche su eventi:
+
+\begin{itemize}
+\item{Evento contrario}
+\item{Unione}
+\item{Intersezione}
+\item{Differenza}
+\end{itemize}
+
+\textbf{Evento contrario:}
+
+È quell'evento $\overline{A}$ che si verifica quando non si verifica $A$
+
+$\newline$
+
+\textbf{Unione:}
+
+È quell'evento $A \cup B$ che si verifica quando si verifica $A$ oppure $B$ (oppure entrambi)
+
+$\newline$
+
+\textbf{Intersezione:}
+
+È quell'evento $A \cap B$ che si verifica quando si verificano entrambi $A$ e $B$
+
+$\newline$
+
+\textbf{Differenza:}
+
+È quell'evento $A \setminus B$ che si verifica quando si verifica $A$ ma non $B$
+
+$\newline$
+
+Valgono inoltre le leggi di \textbf{De Morgan}:
+
+\[ \overline{(A \cup B)} = \overline{A} \cap \overline{B}
+\text{ e }
+\overline{(A \cap B)} = \overline{A} \cup \overline{B} \]
+
+$\newline$
+
+Diciamo inoltre che se due eventi non possono realizzarsi simultaneamente allora sono
+due \textbf{eventi incompatibili}. Tramite formule abbiamo che questo è vero se:
+
+\[ A \cup B = \emptyset \]
+
+\end{flushleft}
+
+\subsection{Classe degli eventi}
+
+\begin{flushleft}
+
+La \textbf{classe degli eventi} è la collezione di tutti gli eventi di cui ha senso parlare 
+nel contesto del dato esperimento casuale con spazio campionario $S$. È indicata con 
+$\mathcal{A}$.
+
+$\newline$
+
+Adesso che abbiamo lo spazio campionario $S$ e la classe degli eventi $\mathcal{A}$ possiamo
+modellare l'incertezza presente nell'esperimento casuale $\varepsilon$.
+
+Per ogni $E \in \mathcal{A}$ indichiamo con $P(E)$ la \textbf{probabilità} di $E$, che sarà
+pertanto un'applicazione $P : \mathcal{A} \rightarrow \mathbb{R}$. Per la costruzione effettiva
+della probabilità ci sono bisogno di alcuni schemi concettuali, dove la \textbf{probabilità
+classica}, \textbf{frequentista} e \textbf{assiomatica} sono i più
+importanti.
+
+\end{flushleft}
+
+\subsection{Probabilità Classica}
+
+\begin{flushleft}
+
+Sia $\varepsilon$ un esperimento casuale, $S$ il suo spazio campionario con cardinalità
+finita $|S|$ e la classe degli eventi $\mathcal{A} = \mathcal{P}(S)$, pure con cardinalità
+finita $2^{ |S| }$.
+
+Allora il modo più semplice di valutare $P(E)$ è secondo la definizione classica di Laplace:
+
+\[ P(E) = \frac{|E|}{|S|}\]
+
+Notiamo che questa definizione suppone che tutti i risultati siano egualmente possibili.
+
+\end{flushleft}
+
+\subsection{Probabilità frequentista}
+
+\begin{flushleft}
+
+Dati $\varepsilon$, $S$, $\mathcal{A}$ e un evento $E \in \mathcal{A}$ nella concezione
+frequentista $P(E)$ misura la propensione dell'esperimento $\varepsilon$ a produrre la 
+realizzazione di $E$ in base alla sue preassegnate regole.
+
+Assumendo omogeneità nel tempo delle ripetizioni dell'esperimento, il valore $P(E)$,
+relativo a ciò che si deve ancora sperimentare, può venire empiricamente approssimato da 
+un dato di esperienza. Si supponga quindi di replicare $\varepsilon$ un numero grande di volte
+che indichiamo con $R$ e di prendere nota che l'evento si sia realizzato o meno nelle varie
+replicazioni. Il valore $P(E)$ varrà quindi:
+
+\[ P(E) \approx P_{R}(E) = \frac 1 R \sum_{r = 1}^R y_r \]
+
+dove $y_r = 1$ se la replicazione r-esima si è verificata, mentre $y_r = 0$ altrimenti.
+
+\end{flushleft}
+
+\subsection{Probabilità assiomatica}
+
+\begin{flushleft}
+
+L'assiomatizzazione del Calcolo delle Probabilità offre le regole per calcolare 
+correttamente nuove probabilità a partire da probabilità assegnate. Seguendo le regole, i
+calcoli funzionano qualunque sia lo scopo dell'analisi e qualunque sia la nostra concezione
+di probabilità.
+
+Il primo passo per l'assiomatizzazione è descrivere bene la classe degli eventi 
+$A \subseteq \mathcal{P}(S)$, cioè le operazioni sugli eventi non devono portare al di fuori
+della classe degli eventi stessa.
+
+In pratica la scelta di $A \subseteq \mathcal{P}(S)$ è guidata dalla cardinalità di $S$:
+
+\begin{itemize}
+\item{Se $S$ ha cardinalità finita o numerabile, si farà sempre la scelta 
+$\mathcal{A} = \mathcal{P}(S)$}
+
+\item{Se $S$ ha la cardinalità del continuo, $\mathcal{P}(S)$ risulta troppo grande e quindi
+si deve scegliere una $A \subset \mathcal{P}(S)$ somigliante a $\mathcal{P}(S)$, cioè con 
+analoghe proprietà di chiusura alle operazioni su eventi. I dettagli sono un po' tecnici}
+\end{itemize}
+
+\end{flushleft}
+
+\subsection{La classe degli eventi come $\sigma$-algebra}
+
+\begin{flushleft}
+
+Si postula che $\mathcal{A}$ sia sempre una $\sigma$-algebra di parti di S, ossia una 
+collezione di parti di $S$ tale che valgano le seguenti tre proprietà:
+
+\begin{itemize}
+\item{$i) S \in \mathcal{A}$}
+\item{$ii) A \in \mathcal{A} \Rightarrow \overline{A} \in \mathcal{A}$}
+\item{$iii) A_i \in \mathcal{A} \; \forall i \in I \subseteq \mathbb{N} \Rightarrow 
+\bigcup_{i \in I} A_i \in \mathcal{A}$}
+\end{itemize}
+
+In sintesi $i)$ richiede che $S$ sia un evento e $ii)$ postula che se $A$ è un evento allora 
+anche $\overline{A}$ sia sempre un evento. Il punto $iii)$ esige che, data una successione 
+finita o numerabile di eventi, anche la loro unione sia un evento, ossia che si possa sempre
+parlare della realizzazione di almeno uno degli eventi di una successione finita o numerabile.
+
+Notiamo inoltre che anche $\emptyset$ è un evento, infatti $\overline{S} \in A$ per $i)$ e 
+$ii)$.
+
+\end{flushleft}
+
+\subsection{Spazi probabilizzabili e Spazi probabilizzati}
+
+\begin{flushleft}
+
+La coppia ordinata $(S, \mathcal{A})$, dove $S$ è non vuoto e $\mathcal{A}$ è una 
+$\sigma$-algebra di parti di $S$, è detta \textbf{spazio probabilizzabile}
+
+$\newline$
+
+Chiamiamo invece \textbf{misura di probabilità} l'applicazione:
+
+\[ P : \mathcal{A} \rightarrow [0, 1] \]
+
+che soddisfa le tre proprietà, dette \textbf{assiomi di Kolmogorov}:
+
+\textbf{A1: } $P(A) \ge 0 \; \forall A \in \mathcal{A}$ detto assioma di non-negatività 
+
+\textbf{A2: } $P(S) = 1$ detto assioma di normalizzazione
+
+\textbf{A3: } per ogni successione $A_i, \; i \in I \subseteq \mathbb{N}$, di eventi a due
+a due incompatibili vale:
+
+\[ P(\cup_{i \in I} A_i) = \sum_{i \in I}P(A_i)\]
+
+$\newline$
+
+Avendo definito la \textbf{misura di probabilità} possiamo definire la terna ordinata 
+$(S, \mathcal{A}, P)$ (dove $P$ è appunto la misura di probabilità) come 
+\textbf{spazio probabilizzato}.
+
+\end{flushleft}
