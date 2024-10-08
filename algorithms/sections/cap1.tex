@@ -1,0 +1,99 @@
+\section{Capitolo 1}
+
+\subsection{Introduzione e Problemi di ordinamento}
+
+\begin{flushleft}
+
+I problemi di ordinamento consistono nell'ordinare una data sequenza di interi, contenuta in un vettore
+di interi $A$ di lunghezza $n$.
+
+Vedremo una serie di algoritmi che si occuperanno di svolgere questo problema e in particolare andremo
+a studiare la \textbf{complessità spaziale e temporale} e la \textbf{correttezza} di questi algoritmi.
+
+\end{flushleft}
+
+\subsection{Insertion Sort}
+
+\begin{flushleft}
+
+L'idea alla base dell'algoritmo Insertion Sort è quella che dato un vettore $A$ dove sappiamo che
+$A[1 ... i-1]$ è già ordinato, allora ci basterà inserire $A[i]$ nel posto giusto in modo che il
+vettore $A[1 ... i]$ sia così ordinato.
+
+Possiamo applicare questa strategia pensando già da subito che il vettore $A[1 ... 1]$ è già ordinato
+quindi ci basterà iniziare a posizionare $A[2]$ e così via.
+
+Questo è lo pseudocodice di Insertion Sort:
+
+\begin{lstlisting}
+
+InsertionSort(A) {
+	for (i <- 2 to n) {
+		key <- A[i]
+		j <- i - 1
+		
+		while (key < A[j] and j > 0) {
+			A[j + 1] <- A[j]
+			j <- j - 1
+		}
+		
+		A[j + 1] <- key
+	}
+}
+
+\end{lstlisting}
+\end{flushleft}
+
+\subsection{Complessità temporale di Insertion Sort}
+
+\begin{flushleft}
+
+Analizziamo adesso la complessità temporale di Insertion Sort andando a costruire la funzione che
+ci ritornerà il tempo di esecuzione che l'algoritmo necessita:
+
+$\newline$
+
+\codewords{for (i <- 2 to n)} necessita tempo $c_1 + c_2 (n - 1)$
+
+$\newline$
+
+\codewords{key <- A[i]} necessita tempo $c_3 (n - 1)$
+
+$\newline$
+
+\codewords{j <- i - 1} necessita tempo $c_4 (n - 1)$
+
+$\newline$
+
+\codewords{while (key < A[j] and j > 0)} necessita tempo $c_5 \sum_{i = 2}^{n}t_i$
+
+$\newline$
+
+\codewords{A[j + 1] <- A[j]} necessita tempo $c_6 \sum_{i = 2}^{n}(t_i - 1)$
+
+$\newline$
+
+\codewords{j <- j - 1} necessita tempo $c_7 \sum_{i = 2}^{n}(t_i - 1)$
+
+$\newline$
+
+\codewords{A[j + 1]} necessita tempo $c_8 (n - 1)$
+
+$\newline$
+
+Sommando tutti i termini $c_i$ abbiamo che:
+
+\begin{equation*}
+\resizebox{\textwidth}{!}{
+$T_{Insert}(n) = c_1 + c_2(n-1) + c_3(n-1) + c_4(n-1) + c_5 \sum_{i = 2}^n t_i + c_6 \sum_{i = 2}^n (t_i-1) 
++ c_7 \sum_{i = 2}^n (t_i-1) + c_8(n-1)$
+}
+\end{equation*}
+
+Che possiamo sintetizzare in:
+
+\[ T_{Insert}(n) = a + b(n-1) + c \sum_{i = 2}^n t_i\]
+
+Questa equazione è molto più semplice da usare
+
+\end{flushleft}
