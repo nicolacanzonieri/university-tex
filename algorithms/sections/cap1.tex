@@ -143,3 +143,45 @@ Un altro concetto molto importante è quello della \textbf{stabilità}, infatti 
 che fa si che gli elementi ripetuti restino nello stesso ordine viene detto \textbf{algoritmo stabile}.
 
 \end{flushleft}
+
+\subsection{Correttezza di Insertion Sort}
+
+\begin{flushleft}
+
+Dobbiamo dimostrare che $\forall A$, \codewords{InsertionSort(A)} termina con $A$ ordinato. Questo
+corrisponde al nostro \textbf{enunciato di correttezza}.
+
+$\newline$
+
+Per procedere abbiamo bisogno di un \textbf{invariante} per il ciclo \codewords{for} che risponderà alla
+domanda: "Alla $i$-esima iterazione del ciclo \codewords{for}, cos'è sempre vero?".
+
+La risposta sarà: "All'inizio della $i$-esima iterazione del \codewords{for}, $A[1...i-1]$ è ordinato".
+
+Dimostriamolo per induzione su $i$:
+
+$\newline$
+
+\textbf{Caso base: i = 2}
+
+$A[1...i-1] = A[1...1]$ è ordinato poiché è composto da un unico elemento
+
+$\newline$
+
+\textbf{Passo induttivo}
+
+Supponiamo che alla $i$-esima iterazione $A[1...i-1]$ sia ordinato, e dimostriamo che $A[1...i]$ verrà ordinato
+alla $i+1$-esima iterazione.
+
+Analizzando il corpo del ciclo \codewords{for} vediamo che il ciclo \codewords{while} sposta a dx gli elementi 
+senza modificare l'ordine. Infatti tutti i valori prima del $j$-esimo (una volta che il ciclo while si è 
+interrotto) sono ordinati e la stessa cosa vale per quelli dopo.
+
+Per questo motivo il valore che verrà inserito nel $j$-esimo posto sarà maggiore di tutti quelli prima di lui
+e minore di tutti quelli dopo di lui.
+
+Inoltre poiché la guardia del ciclo for (vale a dire $i$) non è stata toccata all'interno del ciclo stesso
+possiamo essere sicuri che il for terminerà all'inizio della $(n+1)$-esima iterazione per l'invariante avremo
+che $A[1...(n+1)-1] = A[1...n]$ è ordinato.
+
+\end{flushleft}
