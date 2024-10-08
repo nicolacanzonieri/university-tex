@@ -8,7 +8,7 @@ I problemi di ordinamento consistono nell'ordinare una data sequenza di interi, 
 di interi $A$ di lunghezza $n$.
 
 Vedremo una serie di algoritmi che si occuperanno di svolgere questo problema e in particolare andremo
-a studiare la \textbf{complessità spaziale e temporale} e la \textbf{correttezza} di questi algoritmi.
+a studiare la \textbf{complessità spaziale, temporale} e la \textbf{correttezza} di questi algoritmi.
 
 \end{flushleft}
 
@@ -17,11 +17,12 @@ a studiare la \textbf{complessità spaziale e temporale} e la \textbf{correttezz
 \begin{flushleft}
 
 L'idea alla base dell'algoritmo Insertion Sort è quella che dato un vettore $A$ dove sappiamo che
-$A[1 ... i-1]$ è già ordinato, allora ci basterà inserire $A[i]$ nel posto giusto in modo che il
-vettore $A[1 ... i]$ sia così ordinato.
+$A[1 ... i-1]$ è già ordinato, per ordinare tutto $A[1...i]$ ci basterà inserire $A[i]$ nel posto giusto.
 
 Possiamo applicare questa strategia pensando già da subito che il vettore $A[1 ... 1]$ è già ordinato
-quindi ci basterà iniziare a posizionare $A[2]$ e così via.
+e che quindi ci basterà iniziare a posizionare $A[2]$ e così via.
+
+$\newline$
 
 Questo è lo pseudocodice di Insertion Sort:
 
@@ -135,6 +136,8 @@ motivo abbiamo che:
 
 che vuol dire che la complessità spaziale è \textbf{costante} e quindi si dice anche che Insertion Sort è un
 algoritmo \textbf{in place}.
+
+$\newline$
 
 Un altro concetto molto importante è quello della \textbf{stabilità}, infatti un algoritmo di ordinamento
 che fa si che gli elementi ripetuti restino nello stesso ordine viene detto \textbf{algoritmo stabile}.
