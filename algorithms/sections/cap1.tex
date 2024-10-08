@@ -65,7 +65,9 @@ $\newline$
 
 $\newline$
 
-\codewords{while (key < A[j] and j > 0)} necessita tempo $c_5 \sum_{i = 2}^{n}t_i$
+\codewords{while (key < A[j] and j > 0)} necessita tempo $c_5 \sum_{i = 2}^{n}t_i$ 
+dove $t_i$ indica il numero di volte che l'intestazione viene eseguita durante la 
+$i$-esima iterazione del \codewords{for}
 
 $\newline$
 
@@ -94,6 +96,47 @@ Che possiamo sintetizzare in:
 
 \[ T_{Insert}(n) = a + b(n-1) + c \sum_{i = 2}^n t_i\]
 
-Questa equazione è molto più semplice da usare
+Da questa nuova equazione (molto più maneggiabile) possiamo analizzare il tempo necessario per la computazione
+dell'algoritmo Insertion Sort nel \textbf{caso peggiore} e nel caso \textbf{caso minore}.
+
+$\newline$
+
+Per quanto riguarda il \textbf{caso peggiore} possiamo subito dire che questo caso corrisponde al caso
+in cui il vettore è ordinato in ordine decrescente e quindi avremo che $t_i = i$ da cui vediamo che:
+
+\[ \sum_{i = 2}^{n} i = \frac {n (n+1)} {2} - 1 \]
+
+e quindi:
+
+\[ T_{Insert}(n) = a + b(n-1) + c \frac{n (n+1)}{n} - c = \Theta(n^2)\]
+
+che vuol dire che la complessità temporale nel caso peggiore è \textbf{quadratica}.
+
+$\newline$
+
+Nel \textbf{caso migliore} il vettore è già ordinato e quindi $t_i = 1$ poiché l'intestazione del while
+viene eseguita comunque una volta per il confronto. Quindi abbiamo che:
+
+\[ T_{Insert} = a + b(n-1) + c(n-1) = \Theta(n) \]
+
+che vuol dire che la complessità temporale nel caso migliore è \textbf{lineare}.
+
+\end{flushleft}
+
+\subsection{Complessità spaziale di Insertion Sort}
+
+\begin{flushleft}
+
+Lo spazio richiesto dall'algoritmo (cioè il numero di variabili presenti) non dipende dalla grandezza del
+vettore $A$ (infatti le variabili sono sempre \codewords{i}, \codewords{j} e \codewords{key}). Per questo 
+motivo abbiamo che:
+
+\[ S_{Insert}(n) = \Theta(1)\]
+
+che vuol dire che la complessità spaziale è \textbf{costante} e quindi si dice anche che Insertion Sort è un
+algoritmo \textbf{in place}.
+
+Un altro concetto molto importante è quello della \textbf{stabilità}, infatti un algoritmo di ordinamento
+che fa si che gli elementi ripetuti restino nello stesso ordine viene detto \textbf{algoritmo stabile}.
 
 \end{flushleft}
