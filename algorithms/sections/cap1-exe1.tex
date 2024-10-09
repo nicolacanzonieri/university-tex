@@ -4,7 +4,7 @@
 Facciamo un analisi uguale a quella vista prima ma con un algoritmo di ricerca del massimo 
 in un vettore.
 
-$\newline$
+\bigskip
 
 Vediamo lo pseudocodice dell'algoritmo:
 
@@ -27,25 +27,31 @@ Min(A) {
 \begin{flushleft}
 Recuperiamo la funzione che ci ritornerà il tempo usato dall'algoritmo:
 
-$\newline$
+\medskip
 
 \codewords{min <- A[1]}
 
 $c_1$
 
-$\newline$
+\medskip
 
 \codewords{for (i <- 2 to A.length)}
 
 $c_2 + c_3 (n-1)$
 
+\medskip
+
 \codewords{if (min > A[i])}
 
 $c_4 (n - 1)$
 
+\medskip
+
 \codewords{min <- A[i]}
 
 $c_5 (n-1)$
+
+\medskip
 
 Quindi abbiamo che:
 
