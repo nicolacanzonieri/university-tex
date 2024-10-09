@@ -1,0 +1,71 @@
+\section{Esercizio Algoritmo del massimo}
+\begin{flushleft}
+
+Facciamo un analisi uguale a quella vista prima ma con un algoritmo di ricerca del massimo 
+in un vettore.
+
+$\newline$
+
+Vediamo lo pseudocodice dell'algoritmo:
+
+\begin{lstlisting}
+Min(A) {
+	min <- A[1]
+	
+	for (i <- 2 to A.length) {
+		if (min > A[i]) {
+			min <- A[i]
+		}
+	}
+
+}
+\end{lstlisting}
+\end{flushleft}
+
+\subsection{Complessità}
+
+\begin{flushleft}
+Recuperiamo la funzione che ci ritornerà il tempo usato dall'algoritmo:
+
+$\newline$
+
+\codewords{min <- A[1]}
+
+$c_1$
+
+$\newline$
+
+\codewords{for (i <- 2 to A.length)}
+
+$c_2 + c_3 (n-1)$
+
+\codewords{if (min > A[i])}
+
+$c_4 (n - 1)$
+
+\codewords{min <- A[i]}
+
+$c_5 (n-1)$
+
+Quindi abbiamo che:
+
+\[T_{Max}(n) = c_1 + c_2 + c_3 (n-1) + c_4 (n-1) + c_5 (n-1)\]
+
+che possiamo semplificare in:
+
+\[T_{Max}(n) = a + b (n-1) = \Theta(n)\]
+
+In questo caso non abbiamo fatto un'analisi del caso peggiore e del caso migliore poiché
+la complessità temporale non cambia.
+
+\end{flushleft}
+
+\subsection{Correttezza}
+
+\begin{flushleft}
+
+Per dimostrare la correttezza dobbiamo dimostrare l'invariante del ciclo for che nel
+nostro caso è quello che all'$i$-esima iterazione, \codewords{max} è uguale al valore massimo
+del vettore  
+
+\end{flushleft}
