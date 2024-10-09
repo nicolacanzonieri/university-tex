@@ -1,0 +1,69 @@
+\section{Capitolo  3: Forma normale congiuntiva e disgiuntiva}
+\begin{flushleft}
+L'obbiettivo di questo capitolo è quello di trasformare una formula proposizionale
+in una formula ad essa logicamente equivalente che abbia una forma particolarmente
+semplice dal punto di vista sintattico che ci consentirà di valutare in maniera più
+semplice la sua validità e la sua soddisfacibilità.
+\end{flushleft}
+
+\subsection{Definizione di forma normale congiuntiva e disgiuntiva}
+
+\begin{flushleft}
+Un \textbf{letterale} è una lettera proposizionale oppure la negazione di una 
+lettera proposizionale.
+
+Se $p$ è una lettera proposizionale, $\lbrace p, \neg{p} \rbrace$ è una
+\textbf{coppia complementare di letterali}. Più in generale se $F$ è una formula, 
+$\lbrace F, \neg{F} \rbrace$ è una \textbf{coppia complementare}. Diciamo inoltre
+che $F$ e $\neg{F}$ sono uno il \textbf{complemento} dell'altro.
+
+\bigskip
+
+\textbf{Lemma 3.3}
+
+Un insieme di letterali è soddisfacibile se e solo se non contiene nessuna coppia
+complementare.
+
+\bigskip
+
+\textbf{Esercizio 3.5}
+
+Vogliamo dimostrare che una disgiunzione di letterali è valida se e solo se tra 
+i disgiunti vi è una coppia complementare.
+
+\medskip
+
+Dimostriamo che $p \lor q \text{ valida } \Rightarrow \lbrace p, q \rbrace \text{ è 
+una coppia complementare}$.
+
+\smallskip
+
+Per ipotesi abbiamo che $p \lor q$ è valida che vuol dire che per ogni interpretazione 
+possibile abbiamo che la formula $F = p \lor q$ è soddisfatta, cioè 
+$\forall v, \: v(F) = \mathbb{V}$. Dobbiamo dimostrare che $\lbrace p, q \rbrace$ è 
+una coppia complementare, cioè $q = \neg p$.
+
+Poiché $F = p \lor q$ è una disgiunzione, ed soddisfatta, $\forall v$ abbiamo che 
+se $v(p) = \mathbb{F}$ allora $v(q) = \mathbb{V}$ oppure il viceversa. Tuttavia ricordiamo
+che esistono due casi importanti nella disgiunzione e sono i casi in cui $v(p) = \mathbb{V},
+v(q) = \mathbb{V}$ e $v(p) = \mathbb{F}, v(q) = \mathbb{F}$. Nel primo caso si avrebbe che $F$
+è comunque soddisfatta ma nel secondo caso no. Questa è la prova che automaticamente
+implica che ci sia una relazione di complementarità tra $p$ e $q$, infatti solo se 
+$q = \neg p$ (oppure $p = \neg q$) si avrà che $F$ è soddisfatta per qualsiasi caso.
+
+\medskip
+
+Dimostriamo ora che $\lbrace p, \neg p \rbrace \Rightarrow p \lor \neg p$ è valida.
+
+\begin{proof}[\unskip\nopunct]
+Ma questo è ovvio anche in parte per quanto visto prima
+\end{proof}
+
+\bigskip
+
+Diciamo che una formula proposizionale è in \textbf{forma normale congiuntiva} se
+è della forma $F_1 \land F_2 \land ... \land F_m$ dove per $1 \le i \le m$, $F_i$
+è della forma $G_{i,1} \lor G_{i,2} \lor ... \lor G_{i,h_i}$ dove per 
+$1 \le j \le h_i$, $G_{i, j}$ è un letterale.
+
+\end{flushleft}
