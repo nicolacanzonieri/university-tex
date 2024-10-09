@@ -66,12 +66,34 @@ Diciamo che una formula proposizionale è in \textbf{forma normale congiuntiva} 
 è della forma $G_{i,1} \lor G_{i,2} \lor ... \lor G_{i,h_i}$ dove per 
 $1 \le j \le h_i$, $G_{i, j}$ è un letterale.
 
+\medskip
+
+Diciamo che una formula proposizionale è in \textbf{forma normale disgiuntiva} se
+è della forma $F_1 \lor F_2 \lor ... \lor F_m$ dove per $1 \le i \le m$, $F_i$
+è della forma $G_{i,1} \land G_{i,2} \land ... \land G_{i,h_i}$ dove per 
+$1 \le j \le h_i$, $G_{i, j}$ è un letterale.
+
 \bigskip
 
-Vediamo di fare qualche esempio:
+\textbf{Esempix:}
 
-\textbf{Esempio:}
+\[(p \lor q) \land (r \lor \neg s \lor \neg t)\]
 
-\[(p \lor q) \land (r \lor s)\]
+dove $m = 2$, $h_1 = 2$, $h_2 = 3$.
+
+\medskip
+
+\[(\neg p \lor q \lor \neg t) \land (r \lor \neg s \lor t) \land (s \lor \neg p)\]
+
+dove $m = 3$, $h_1 = 3$, $h_2 = 3$, $h_3 = 2$.
+
+\bigskip
+
+\textbf{Teorema 3.10}
+
+Ogni formula proposizionale $F$ può essere trasformata in due formule $G_1$ e $G_2$,
+la prima in forma normale congiuntiva e la seconda in forma normale disgiuntiva, tali che
+
+\[ F \equiv G_1 \text{ e } F \equiv G_2 \]
 
 \end{flushleft}
